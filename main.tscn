@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgj3k6bguwwq4"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_lw8al"]
+[ext_resource type="PackedScene" uid="uid://c6letsawqqxa3" path="res://bird.tscn" id="2_u5mh4"]
+
+[node name="Main" type="Node2D" node_paths=PackedStringArray("bird")]
+script = ExtResource("1_lw8al")
+bird = NodePath("Bird")
+
+[node name="Bird" parent="." instance=ExtResource("2_u5mh4")]
+position = Vector2(413, 203)
+
+[connection signal="terminated" from="Bird" to="." method="_on_bird_terminated"]
